@@ -1,193 +1,153 @@
-# Stock_Price_Simulator
+# 📊 Stock Price Simulator
 
-The Stock Price Simulator is a C++ program designed to simulate 
-the future prices of a stock using geometric Brownian Motion and Monte Carlo Simulations.
-
-(1) THE NATURE OF STOCK PRICES :->
-  Stock prices are random and predictable influenced by:
-  (a) Market news , earnings , economic factors.
-  (b) Investor behaviour.
-  (c) Random shocks.
-
-
-Yet, they exhibit some statistical properties:->
-(1) Non-negative -> A stock price can't go below zero
-(2) Returns are approximately log - normal -> the logarithm of stock returns roughly follows a normal distribution
-(3) Random Walk -> prices move up or down with some average drift and volatility
-
-
- 
-<img width="560" height="633" alt="Screenshot 2025-10-08 124651" src="https://github.com/user-attachments/assets/070138df-0f40-4c60-8ccf-602cf8572b42" />
-
-<img width="595" height="765" alt="Screenshot 2025-10-08 125408" src="https://github.com/user-attachments/assets/ed3d3488-59bd-4ec1-a8f8-6db00d1168d5" />
-
-<img width="663" height="811" alt="Screenshot 2025-10-08 125452" src="https://github.com/user-attachments/assets/c87961a4-f90e-4bfb-ab2e-28e638e7ff5e" />
-
-<img width="699" height="798" alt="Screenshot 2025-10-08 125850" src="https://github.com/user-attachments/assets/04d45590-903b-4037-ac03-ef485f46034d" />
-
-
-
-Some important terms we should know:
-<img width="821" height="348" alt="Screenshot 2025-10-08 131850" src="https://github.com/user-attachments/assets/7af8a2f4-ed66-4547-b3ba-5349c463ed1a" />
-
-<img width="707" height="691" alt="Screenshot 2025-10-08 132920" src="https://github.com/user-attachments/assets/56a86e3b-758b-484d-86d5-8ad32e68096a" />
-
-<img width="528" height="883" alt="Screenshot 2025-10-08 133317" src="https://github.com/user-attachments/assets/3b8f49dc-40c9-4e43-802e-6f1482424c15" />
-
-
-What is an OS entropy pool?
-
-Modern operating systems (Linux, Windows, macOS) maintain a pool of randomness called the entropy pool.
-This is like a big bucket of unpredictable bits collected from various unpredictable events in the system.
-
-
-Terms:
-
-rd() → produces a hardware/OS random integer
-mt19937 gen(rd()) → initializes the fast PRNG with that seed
-dis(gen) → produces uniformly distributed floating-point numbers between 0 and 1
-
-
-
-// Box Muller function 
-To convert uniform value to normal value as normal distribution is where mostly the nature of law
-
-
-Important Terms:
-(1) Volatility: How much a stock price fluctuates over time.
-      It is represented by sigma
-      In finance:-> measured as standard deviation of returns  
-   High volatility → big swings in price
-   Low volatility → price moves slowly and steadily
-
-(2) Risk: The chance that the stock price will move against your expectations
-  (*) Volatility is one measure of risks
-  (*) Risk is captured by the "Spread of Stimulated Outcomes".
-
-  double stddev = sqrt(sq_sum / simulations - meanPrice*meanPrice);
-  
-  <img width="319" height="93" alt="Screenshot 2025-10-08 140359" src="https://github.com/user-attachments/assets/4eaf8310-e369-4921-9f59-b0d6cb1bb5ab" />
-
-(3) Drift: It is the expected upward or downward trend of the stock
-           It is represented by mu
-
-
-
-GBM and MonteCarlo the main algorithms for this purpose:
-
-
-## 📈 Stock Price Simulation
-
-This project simulates stock prices using **Geometric Brownian Motion (GBM)** and evaluates outcomes with **Monte Carlo simulation**.
+The **Stock Price Simulator** is a C++ program designed to simulate future prices of a stock using **Geometric Brownian Motion (GBM)** and **Monte Carlo Simulations**.
 
 ---
 
-### 1. Geometric Brownian Motion (GBM)
+## 🌟 Nature of Stock Prices
 
-This is the **standard model** used in finance for simulating stock prices.
+Stock prices are random yet predictable to some extent. They are influenced by:
 
-**Formula (continuous-time stochastic differential equation):**
+- Market news, earnings, and economic factors  
+- Investor behavior  
+- Random shocks  
+
+**Statistical properties:**
+
+1. **Non-negative:** Prices cannot go below zero  
+2. **Log-normal returns:** Logarithm of returns roughly follows a normal distribution  
+3. **Random walk:** Prices move up or down with some average drift and volatility  
+
+---
+
+### Screenshots
+
+<div align="center">
+
+<img width="400" alt="Stock Simulator 1" src="https://github.com/user-attachments/assets/070138df-0f40-4c60-8ccf-602cf8572b42" />  
+
+<img width="400" alt="Stock Simulator 2" src="https://github.com/user-attachments/assets/ed3d3488-59bd-4ec1-a8f8-6db00d1168d5" />  
+
+<img width="400" alt="Stock Simulator 3" src="https://github.com/user-attachments/assets/c87961a4-f90e-4bfb-ab2e-28e638e7ff5e" />  
+
+<img width="400" alt="Stock Simulator 4" src="https://github.com/user-attachments/assets/04d45590-903b-4037-ac03-ef485f46034d" />
+
+</div>
+
+---
+
+## 🔑 Key Terms
+
+<div align="center">
+
+<img width="500" alt="Key Terms 1" src="https://github.com/user-attachments/assets/7af8a2f4-ed66-4547-b3ba-5349c463ed1a" />  
+
+<img width="500" alt="Key Terms 2" src="https://github.com/user-attachments/assets/56a86e3b-758b-484d-86d5-8ad32e68096a" />  
+
+<img width="500" alt="Key Terms 3" src="https://github.com/user-attachments/assets/3b8f49dc-40c9-4e43-802e-6f1482424c15" />
+
+</div>
+
+**OS Entropy Pool:** Modern operating systems maintain a pool of randomness (entropy pool) collected from unpredictable events.
+
+- `rd()` → generates a hardware/OS random integer  
+- `mt19937 gen(rd())` → initializes the fast PRNG  
+- `dis(gen)` → produces uniformly distributed floating-point numbers between 0 and 1  
+
+**Box-Muller Function:** Converts uniform random values to standard normal values, which is crucial for GBM simulations.
+
+**Other Important Terms:**
+
+- **Volatility (\( \sigma \))**: How much a stock price fluctuates. High → big swings, Low → stable  
+- **Risk**: Chance stock moves against expectations; partially captured by volatility  
+- **Drift (\( \mu \))**: Expected upward/downward trend  
+
+---
+
+## 📈 Stock Price Simulation
+
+### 1️⃣ Geometric Brownian Motion (GBM)
+
+**Continuous-time SDE:**
 
 \[
 dS_t = \mu S_t \, dt + \sigma S_t \, dW_t
 \]
 
-Where:
 - \( S_t \) = stock price at time \( t \)  
 - \( \mu \) = drift (expected return)  
 - \( \sigma \) = volatility  
-- \( W_t \) = standard Brownian motion (randomness)  
+- \( W_t \) = standard Brownian motion  
 
-**Discrete-time simulation (Euler approximation):**
+**Discrete-time (Euler approximation):**
 
 \[
-S_{t+\Delta t} = S_t \cdot \exp \Big[ \big(\mu - \tfrac{1}{2}\sigma^2\big)\Delta t + \sigma \sqrt{\Delta t} \cdot Z \Big]
+S_{t+\Delta t} = S_t \cdot \exp \Big[ (\mu - 0.5\sigma^2)\Delta t + \sigma \sqrt{\Delta t} \cdot Z \Big]
 \]
 
-where \( Z \sim N(0,1) \) (standard normal random variable).
-
-🔹 GBM assumes **log-normal distribution** of prices, which aligns better with real-world stock returns than a normal distribution.
+where \( Z \sim N(0,1) \).  
+GBM ensures **log-normal distribution**, aligning with real-world stock returns.
 
 ---
 
-### 2. Monte Carlo Simulation
+### 2️⃣ Monte Carlo Simulation
 
-Monte Carlo is not a model itself, but a **method**: run many random simulations of stock price paths (using GBM or another model) and analyze the results.
+Monte Carlo is a **method** to generate many random paths of stock prices:
 
 **Steps:**
-1. Define model parameters \((S_0, \mu, \sigma, T)\)  
-2. Simulate one stock price path using GBM  
-3. Repeat thousands of times (each run is a “trial”)  
-4. Collect outcomes → build a distribution of possible prices  
 
-**From this, we can estimate:**
+1. Define parameters: \( S_0, \mu, \sigma, T \)  
+2. Simulate a single path using GBM  
+3. Repeat thousands of times  
+4. Analyze the distribution of outcomes  
+
+**Outputs:**
+
 - Expected final price  
 - Probability of loss/profit  
-- Value at Risk (VaR)  
-- Option pricing (e.g., Black-Scholes can be derived using Monte Carlo with GBM)  
+- Risk metrics (e.g., standard deviation, Value at Risk)  
+- Option pricing (e.g., Black-Scholes estimation)  
 
 ---
 
-### ✨ Relationship between GBM & Monte Carlo
+### 🔗 GBM & Monte Carlo Relationship
 
-- **GBM** = the model of stock dynamics  
-- **Monte Carlo** = the computational method to generate and analyze many GBM paths  
+- **GBM** = the model of price evolution  
+- **Monte Carlo** = method to simulate & analyze many GBM paths  
 
-📊 **Analogy:**  
-- GBM = the dice rule (e.g., “roll a die, add to score”)  
-- Monte Carlo = rolling the die 10,000 times and analyzing the distribution of results  
+**Analogy:**  
+- GBM = the dice rule  
+- Monte Carlo = rolling the dice 10,000 times and analyzing results  
 
 ---
 
 ## 📝 Problem Summary
 
-Stock prices are inherently uncertain and fluctuate over time. Predicting their future values is crucial in finance for **risk management, investment decisions, and option pricing**. However, due to randomness in the market, exact prediction is impossible.  
+Stock prices are uncertain. Predicting future values is crucial for **risk management, investments, and options pricing**, but exact prediction is impossible.  
 
-**Problem:**  
-Simulate the future behavior of a single stock over a given time horizon, accounting for both **expected returns** and **volatility**, and estimate the statistical properties of its possible outcomes.
+**Goal:** Simulate possible future prices of a stock over a time horizon considering **drift** and **volatility**.
 
 ---
 
 ## 🔧 Solution Approach
 
-To solve this problem, we use a combination of **Geometric Brownian Motion (GBM)** and **Monte Carlo simulation**:
+1. **GBM Model:**
+   - Simulates stochastic price movement  
+   - Incorporates drift (\( \mu \)) and volatility (\( \sigma \))  
+   - Ensures positivity and log-normal distribution  
 
-1. **Geometric Brownian Motion (GBM):**
-   - A mathematical model that represents the stochastic evolution of stock prices.
-   - Accounts for both:
-     - **Drift** (\( \mu \)) → expected return
-     - **Volatility** (\( \sigma \)) → randomness
-   - Ensures stock prices remain positive and follow a **log-normal distribution**.
-   - Discretized using:
-     \[
-     S_{t+\Delta t} = S_t \cdot \exp \Big[ (\mu - 0.5\sigma^2)\Delta t + \sigma \sqrt{\Delta t} \cdot Z \Big]
-     \]
-     where \( Z \sim N(0,1) \) is a standard normal random variable.
-
-2. **Monte Carlo Simulation:**
-   - Runs **many independent simulations** of stock price paths using GBM.
-   - Each simulation represents one possible future outcome of the stock.
-   - Aggregates results to compute:
-     - **Expected final price**
-     - **Standard deviation** (risk)
-     - **Probability distribution** of prices
-   - Allows statistical analysis and visualization of stock behavior.
+2. **Monte Carlo:**
+   - Generates multiple independent GBM paths  
+   - Computes mean, standard deviation, probability distribution of outcomes  
 
 ---
 
 ### ✅ Implementation Overview
 
-- Initialize model parameters: \( S_0 \) (initial price), \( \mu \) (drift), \( \sigma \) (volatility), \( T \) (time horizon), number of steps, and number of simulations.  
-- Simulate each stock path using GBM.  
-- Collect final prices from all simulations.  
-- Save results to a CSV file for visualization.  
-- Compute summary statistics (mean, standard deviation) to understand the range of possible outcomes.
+- Initialize parameters: \( S_0, \mu, \sigma, T \), steps, simulations  
+- Run GBM simulation for each path  
+- Collect final prices from all simulations  
+- Save results for visualization (CSV/graphs)  
+- Compute statistics: mean, standard deviation, etc.  
 
-This approach provides a **probabilistic estimate of future stock prices**, which is widely used in **quantitative finance** and **risk management**.
-
-
-
-
-   
-
-
+This approach provides a **probabilistic estimate of future stock prices**, widely used in **quantitative finance**.
