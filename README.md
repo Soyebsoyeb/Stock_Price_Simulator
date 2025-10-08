@@ -22,3 +22,6 @@ Yet, they exhibit some statistical properties:->
 <img width="595" height="765" alt="Screenshot 2025-10-08 125408" src="https://github.com/user-attachments/assets/ed3d3488-59bd-4ec1-a8f8-6db00d1168d5" />
 
 <img width="663" height="811" alt="Screenshot 2025-10-08 125452" src="https://github.com/user-attachments/assets/c87961a4-f90e-4bfb-ab2e-28e638e7ff5e" />
+
+<img width="699" height="798" alt="Screenshot 2025-10-08 125850" src="https://github.com/user-attachments/assets/04d45590-903b-4037-ac03-ef485f46034d" />
+
