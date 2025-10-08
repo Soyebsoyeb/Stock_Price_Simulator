@@ -1,10 +1,10 @@
-# 📊 Stock Price Simulator
+#  Stock Price Simulator
 
 The **Stock Price Simulator** is a C++ program designed to simulate future prices of a stock using **Geometric Brownian Motion (GBM)** and **Monte Carlo Simulations**.
 
 ---
 
-## 🌟 Nature of Stock Prices
+##  Nature of Stock Prices
 
 Stock prices are random yet somewhat predictable. They are influenced by:
 
@@ -20,7 +20,7 @@ Stock prices are random yet somewhat predictable. They are influenced by:
 
 ---
 
-## 🖼 Screenshots
+## Screenshots
 
 <div align="center">
 
@@ -33,7 +33,7 @@ Stock prices are random yet somewhat predictable. They are influenced by:
 
 ---
 
-## 🔑 Key Terms
+##  Key Terms
 
 <div align="center">
 
@@ -59,9 +59,9 @@ Stock prices are random yet somewhat predictable. They are influenced by:
 
 ---
 
-## 📈 Stock Price Simulation
+## Stock Price Simulation
 
-### 1️⃣ Geometric Brownian Motion (GBM)
+### (1) Geometric Brownian Motion (GBM)
 
 **Continuous-time SDE (stochastic differential equation):**
 
@@ -85,7 +85,7 @@ GBM ensures **log-normal distribution**, which aligns with real-world stock retu
 
 ---
 
-### 2️⃣ Monte Carlo Simulation
+### (2) Monte Carlo Simulation
 
 Monte Carlo is a **method** to generate many random paths of stock prices.
 
@@ -105,7 +105,7 @@ Monte Carlo is a **method** to generate many random paths of stock prices.
 
 ---
 
-### 🔗 GBM & Monte Carlo Relationship
+###  GBM & Monte Carlo Relationship
 
 - **GBM** = the model of price evolution  
 - **Monte Carlo** = method to simulate & analyze many GBM paths  
@@ -116,7 +116,7 @@ Monte Carlo is a **method** to generate many random paths of stock prices.
 
 ---
 
-## 📝 Problem Summary
+##   Problem Summary
 
 Stock prices are uncertain. Predicting future values is crucial for **risk management, investments, and options pricing**, but exact prediction is impossible.  
 
@@ -124,7 +124,7 @@ Stock prices are uncertain. Predicting future values is crucial for **risk manag
 
 ---
 
-## 🔧 Solution Approach
+##    Solution Approach
 
 1. **GBM Model:**
    - Simulates stochastic price movement  
@@ -137,7 +137,7 @@ Stock prices are uncertain. Predicting future values is crucial for **risk manag
 
 ---
 
-### ✅ Implementation Overview
+###  Implementation Overview
 
 - Initialize parameters: `S_0`, `μ`, `σ`, `T`, steps, simulations  
 - Run GBM simulation for each path  
