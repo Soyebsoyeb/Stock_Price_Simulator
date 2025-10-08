@@ -65,7 +65,9 @@ Stock prices are random yet somewhat predictable. They are influenced by:
 
 **Continuous-time SDE (stochastic differential equation):**
 
-dS_t = μ * S_t * dt + σ * S_t * dW_t
+$$
+dS_t = \mu S_t \, dt + \sigma S_t \, dW_t
+$$
 
 
 Where:  
@@ -76,8 +78,9 @@ Where:
 
 **Discrete-time (Euler approximation):**
 
+$$
 S_{t+Δt} = S_t * exp[(μ - 0.5 * σ^2) * Δt + σ * sqrt(Δt) * Z]
-
+$$
 
 
 Where `Z` is a standard normal random variable (Z ~ N(0,1)).  
